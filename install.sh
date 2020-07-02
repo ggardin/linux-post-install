@@ -109,6 +109,12 @@ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
 
+# Install Syncthing
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt-get update
+sudo apt-get install syncthing
+
 # Install Plank dock
 sudo apt-get install plank
 
