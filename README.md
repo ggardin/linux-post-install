@@ -21,6 +21,7 @@ The `install.sh` bash script adds:
 1. [Arc Theme](https://github.com/jnsh/arc-theme) theme.
 1. [Visual Studio Code](https://code.visualstudio.com/) (by Microsoft) and Filezilla.
 1. [Remmina](https://remmina.org/) RDP client.
+1. Syncthing.
 1. Plank dock.
 
 The installation of any of these items is optional.
