@@ -23,3 +23,5 @@ The `install.sh` bash script adds:
 1. Plank dock.
 
 The installation of any of these items is optional.
+
+_Disclaimer: this is a side project for my personal use and comes with no warranties. Anyway, you're welcome to fork, commit and raise issues._
