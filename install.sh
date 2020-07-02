@@ -104,6 +104,11 @@ else
     echo "Web dev utilities were not installed"
 fi
 
+# Install Remmina RDP client
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
+
 # Install Plank dock
 sudo apt-get install plank
 
