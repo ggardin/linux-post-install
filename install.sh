@@ -10,6 +10,7 @@ then
 fi
 
 # Ensure system is up to date and upgrade
+echo "Updating and upgrading packages..."
 sudo apt-get update
 sudo apt-get upgrade -y
 
@@ -22,10 +23,12 @@ Is this a ThinkPad laptop? [y]/n
 read $laptop
 
 if [[ $laptop -eq "y" ]] || [[ $laptop -eq "yes" ]]; then
+    echo "Installing TLP and ACPI module from PPA..."
     sudo add-apt-repository ppa:linrunner/tlp
     sudo apt update
     sudo apt install tlp tlp-rdw
     sudo apt install acpi-call-dkms
+    echo "Starting TLP..."
     sudo tlp start
 else 
     echo "Skipping TLP power management installation."
@@ -40,6 +43,7 @@ Do you want to enable Wake On Lan (WOL)? [y]/n
 read $wol
 
 if [[ $wol -eq "y" ]] || [[ $wol -eq "yes" ]]; then
+    echo "Installing ethtool..."
     sudo apt-get install ethtool
     echo "List of network adapters found on the system:"
     ip a
@@ -61,6 +65,7 @@ Do you want to install Papirus iconpack? [y]/n
 read $papirus
 
 if [[ $papirus -eq "y" ]] || [[ $papirus -eq "yes" ]]; then
+    echo "Installing Papirus from PPA..."
     sudo add-apt-repository ppa:papirus/papirus
     sudo apt-get update
     sudo apt-get install papirus-icon-theme
@@ -77,6 +82,7 @@ Do you want to install Arc theme? [y]/n
 read $arctheme
 
 if [[ $arctheme -eq "y" ]] || [[ $arctheme -eq "yes" ]]; then
+    echo "Installing Arc theme..."
     sudo apt-get install arc-theme
 else 
     echo "Arc theme was not installed"
@@ -92,7 +98,9 @@ VS Code, Filezilla
 read $web
 
 if [[ $web -eq "y" ]] || [[ $web -eq "yes" ]]; then
+    echo "Installing Filezilla..."
     sudo apt-get install filezilla
+    echo "Installing Visual Studio Code..."
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
     sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
     sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -105,20 +113,24 @@ else
 fi
 
 # Install Remmina RDP client
+echo "Installing Remmina..."
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
 
 # Install Syncthing
+echo "Installing Syncthing..."
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo apt-get update
 sudo apt-get install syncthing
 
 # Install Plank dock
+echo "Installing Plank..."
 sudo apt-get install plank
 
 # Cleanup
+echo "Cleaning up..."
 sudo apt autoremove
 sudo apt clean 
 
