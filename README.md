@@ -31,4 +31,5 @@ _Disclaimer: this is a side project for my personal use and comes with no warran
 ## Reference
 1. [Pi-hole](https://github.com/pi-hole/pi-hole/blob/master/automated%20install/basic-install.sh) installation script
 2. [Bash Shell Scripting](https://en.wikibooks.org/wiki/Bash_Shell_Scripting) on WikiBooks
+3. [Shell scripting adventures](https://saveriomiroddi.github.io/Shell-scripting-adventures-part-3/)
 
