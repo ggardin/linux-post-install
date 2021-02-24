@@ -129,6 +129,9 @@ sudo apt-get install syncthing
 echo "Installing Plank..."
 sudo apt-get install plank
 
+# Install Kmix for proper media keys support in KDE
+sudo apt-get install kmix
+
 # Cleanup
 echo "Cleaning up..."
 sudo apt autoremove
