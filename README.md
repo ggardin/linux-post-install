@@ -16,7 +16,7 @@ Run che script with either one of these commands:
 The `install.sh` bash script installs:
 
 1. [TLP](https://linrunner.de/tlp/index.html) power management, with ThinkPad kernel module (T420 and later generations).
-2. Wake On Lan (WOL), via ethtool.
+2. Wake On Lan (WOL), via ethtool. If TLP is installed, flag `WOL_DISABLE` in `/etc/tlp.conf` has to be set to `N`. For reference: [Arch Wiki](https://wiki.archlinux.org/index.php/Wake-on-LAN).
 3. [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icon pack.
 4. [Arc Theme](https://github.com/jnsh/arc-theme) theme.
 5. [Visual Studio Code](https://code.visualstudio.com/) (by Microsoft) and Filezilla.
