@@ -52,6 +52,8 @@ if [[ $wol -eq "y" ]] || [[ $wol -eq "yes" ]]; then
     sudo ethtool -s $interface wol g
     echo "WOL was succesfully enabled."
     echo "However, now you need to enable a startup script. Google for it!"
+    echo "https://wiki.archlinux.org/index.php/Wake-on-LAN"
+    echo "Check WOL_DISABLE in /etc/tlp.conf"
 else 
     echo "WOL was not installed"
 fi
