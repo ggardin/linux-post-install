@@ -11,6 +11,10 @@ Run che script with either one of these commands:
     sudo ./install.sh
     sudo sh install.sh
     sudo bash install.sh
+    
+Alternatively, simply run:
+
+    wget https://raw.githubusercontent.com/ggardin/linux-post-install/master/install.sh && bash install.sh
 
 ## Content of the script
 The `install.sh` bash script installs:
